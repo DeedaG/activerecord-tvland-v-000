@@ -7,8 +7,8 @@ class Actor < ActiveRecord::Base
     end
 
   def list_roles
-    self.character.all.select do |character|
-      "#{character.show} == self"
+    self.character.map do |character|
+      "#{character} - #{character.show}
     end
   end
 
