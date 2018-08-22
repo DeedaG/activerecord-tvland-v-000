@@ -7,7 +7,7 @@ class Actor < ActiveRecord::Base
     end
 
   def list_roles
-    self.character.map do |join|
+    self.characters.map do |join|
       "#{join.name} - #{join.shows.name}"
     end
   end
